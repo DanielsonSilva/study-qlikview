@@ -1,0 +1,56 @@
+﻿///$tab Main
+SET ThousandSep='.';
+SET DecimalSep=',';
+SET MoneyThousandSep='.';
+SET MoneyDecimalSep=',';
+SET MoneyFormat='R$ #.##0,00;-R$ #.##0,00';
+SET TimeFormat='hh:mm:ss';
+SET DateFormat='DD/MM/YYYY';
+SET TimestampFormat='DD/MM/YYYY hh:mm:ss[.fff]';
+SET FirstWeekDay=6;
+SET BrokenWeeks=1;
+SET ReferenceDay=0;
+SET FirstMonthOfYear=1;
+SET CollationLocale='pt-BR';
+SET MonthNames='jan;fev;mar;abr;mai;jun;jul;ago;set;out;nov;dez';
+SET LongMonthNames='janeiro;fevereiro;março;abril;maio;junho;julho;agosto;setembro;outubro;novembro;dezembro';
+SET DayNames='seg;ter;qua;qui;sex;sáb;dom';
+SET LongDayNames='segunda-feira;terça-feira;quarta-feira;quinta-feira;sexta-feira;sábado;domingo';
+///$tab Tables
+LOAD MemberKey, 
+     member_biz_key, 
+     age, 
+     gender, 
+     postal_code, 
+     country, 
+     nationality, 
+     email_address, 
+     member_type, 
+     marital_status, 
+     no_of_dependents, 
+     mortgage, 
+     date_joined_co, 
+     self_employed_flag, 
+     age_band, 
+     EnterpriseKey, 
+     occupation, 
+     annual_salary, 
+     employee_status, 
+     date_joined_fund
+FROM
+[C:\The Complete QlikView Bootcamp\Section 1\Member.xlsx]
+(ooxml, embedded labels, table is Member);
+
+///$tab Table Cover
+LOAD MemberKey, 
+     underwriting_year, 
+     total_death_cover, 
+     total_death_cover_premium, 
+     total_ip_cover, 
+     total_ip_cover_premium, 
+     total_tpd_cover, 
+     total_tpd_cover_premium
+FROM
+[C:\The Complete QlikView Bootcamp\Section 1\MemberCover.xlsx]
+(ooxml, embedded labels, table is MemberCover);
+
